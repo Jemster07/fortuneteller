@@ -1,0 +1,10 @@
+Paper fortune tellers are origami toys commonly made by school
+children to predict their friends' futures. Fortunes typically predicted
+what your futre job would be, who you'd marry, and how much your
+future home would be worth. They could also contain prank fortunes
+so outrageous they could never become reality.
+
+There is no way to cheat a fortune teller, but there is an element of
+randomness determined by the direction the teller opens the toy in
+after the user chooses their color. There are 8 available fortunes in
+the game - what does your future hold?

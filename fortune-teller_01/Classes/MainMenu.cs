@@ -59,6 +59,12 @@ namespace fortune_teller_01.Classes
 
                 aboutMenu.CallAboutMenu();
             }
+            else
+            {
+                PlayGame playGame = new PlayGame();
+
+                playGame.CallPlayGame();
+            }
         }
     }
 }

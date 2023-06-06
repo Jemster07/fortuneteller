@@ -17,14 +17,48 @@ namespace fortune_teller_01.Classes
             Console.WriteLine("--- About ---");
             Console.WriteLine();
 
-            // About section text body goes here
-            Console.WriteLine("Hello World!");
+            string fullPath = "C:\\Users\\Student\\workspace\\personal-projects\\fortune-teller_01\\fortune-teller_01\\stream-files\\About.txt";
+
+            bool isValid = false;
+
+            while (!isValid)
+            {
+                try
+                {
+                    using (StreamReader readAbout = new StreamReader(fullPath))
+                    {
+                        while (!readAbout.EndOfStream)
+                        {
+                            string line = readAbout.ReadLine();
+                            Console.WriteLine(line);
+                            isValid = true;
+                        }
+                    }
+                }
+                catch (FileLoadException)
+                {
+                    Console.WriteLine("ERROR: Called file is damaged or in use.");
+                }
+                catch (FileNotFoundException)
+                {
+                    Console.WriteLine("ERROR: Called file does not exist!");
+                }
+                catch (Exception readAboutException)
+                {
+                    Console.WriteLine(readAboutException.Message);
+                }
+            }
 
             Console.WriteLine();
             Console.Write("Press any key to return to the Main Menu");
             Console.WriteLine();
 
-            string userInput = Console.ReadLine();    
+            Console.ReadKey(true);
+            Console.Clear();
+
+            MainMenu mainMenu = new MainMenu();
+
+            mainMenu.CallMainMenu();
         }
     }
 }
