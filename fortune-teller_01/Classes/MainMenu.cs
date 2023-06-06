@@ -65,6 +65,8 @@ namespace fortune_teller_01.Classes
 
                 playGame.CallPlayGame();
             }
+            // Add an else statement that allows the user to exit from the main menu
+            
         }
     }
 }

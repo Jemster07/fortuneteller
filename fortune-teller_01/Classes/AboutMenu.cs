@@ -17,36 +17,36 @@ namespace fortune_teller_01.Classes
             Console.WriteLine("--- About ---");
             Console.WriteLine();
 
-            string fullPath = "C:\\Users\\Student\\workspace\\personal-projects\\fortune-teller_01\\fortune-teller_01\\stream-files\\About.txt";
+            string pathToFile = ".\\Data\\About.txt";
 
-            bool isValid = false;
-
-            while (!isValid)
+            try
             {
-                try
+                using (StreamReader readAbout = new StreamReader(pathToFile))
                 {
-                    using (StreamReader readAbout = new StreamReader(fullPath))
+                    while (!readAbout.EndOfStream)
                     {
-                        while (!readAbout.EndOfStream)
-                        {
-                            string line = readAbout.ReadLine();
-                            Console.WriteLine(line);
-                            isValid = true;
-                        }
+                        string line = readAbout.ReadLine();
+                        Console.WriteLine(line);
                     }
                 }
-                catch (FileLoadException)
-                {
-                    Console.WriteLine("ERROR: Called file is damaged or in use.");
-                }
-                catch (FileNotFoundException)
-                {
-                    Console.WriteLine("ERROR: Called file does not exist!");
-                }
-                catch (Exception readAboutException)
-                {
-                    Console.WriteLine(readAboutException.Message);
-                }
+            }
+            catch (FileLoadException)
+            {
+                Console.WriteLine("ERROR: Called file is damaged or in use.");
+                Console.WriteLine("Please close the file or restore it and try again.");
+                return;
+            }
+            catch (FileNotFoundException)
+            {
+                Console.WriteLine("ERROR: Called file does not exist!");
+                Console.WriteLine("Please restore the file and try again.");
+                return;
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("ERROR: Something went wrong.");
+                Console.WriteLine("Please verify the program file structure is complete and try again.");
+                return;
             }
 
             Console.WriteLine();
