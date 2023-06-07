@@ -57,7 +57,6 @@ namespace fortune_teller_01.Classes
             Console.Clear();
 
             MainMenu mainMenu = new MainMenu();
-
             mainMenu.CallMainMenu();
         }
     }

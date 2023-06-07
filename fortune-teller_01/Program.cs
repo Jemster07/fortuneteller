@@ -7,7 +7,6 @@ namespace fortune_teller_01
         static void Main(string[] args)
         {
             MainMenu mainMenu = new MainMenu();
-
             mainMenu.CallMainMenu();
         }
     }

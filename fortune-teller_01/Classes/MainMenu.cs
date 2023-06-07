@@ -56,13 +56,11 @@ namespace fortune_teller_01.Classes
             if (userInputLower == "about" || userInputLower == "1" || userInputLower == "[1]")
             {
                 AboutMenu aboutMenu = new AboutMenu();
-
                 aboutMenu.CallAboutMenu();
             }
             else
             {
                 PlayGame playGame = new PlayGame();
-
                 playGame.CallPlayGame();
             }
             // Add an else statement that allows the user to exit from the main menu
